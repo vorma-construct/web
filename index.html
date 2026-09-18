@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vorma Construct · Reformas en Bilbao</title>
+<meta name="description" content="Reformas de pisos, baños y cocinas en Bilbao y Bizkaia. Presupuesto cerrado, escombro incluido y seguimiento de la obra desde el móvil.">
+<link rel="icon" href="img/logo.png">
+<style>
+@font-face{font-family:'Tit';src:url('fonts/titulos-bold.woff2') format('woff2');font-weight:700 900;font-display:swap}
+@font-face{font-family:'Tit';src:url('fonts/titulos-regular.woff2') format('woff2');font-weight:100 600;font-display:swap}
+@font-face{font-family:'Txt';src:url('fonts/texto-regular.woff2') format('woff2');font-weight:100 500;font-display:swap}
+@font-face{font-family:'Txt';src:url('fonts/texto-bold.woff2') format('woff2');font-weight:600 900;font-display:swap}
+:root{--ink:#1c1f22;--crema:#FBF8F1;--oro:#A87B18;--oro2:#C99A2E;--muted:#b9b2a3}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--ink);color:#fff;font-family:'Txt',system-ui,sans-serif;font-size:17px;line-height:1.5}
+h1,h2,h3{font-family:'Tit','DejaVu Serif Condensed',Georgia,serif;font-weight:800;line-height:1;margin:0}
+a{color:inherit}
+
+/* ---- el vídeo de fondo, fijo ---- */
+.fondo{position:fixed;inset:0;z-index:0;background:#000;overflow:hidden}
+.fondo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.1s ease}
+.fondo video.on{opacity:1}
+.velo{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,.72) 0%,rgba(10,10,10,.35) 45%,rgba(10,10,10,.05) 100%)}
+@media(max-width:700px){.velo{background:linear-gradient(to top,rgba(10,10,10,.85) 0%,rgba(10,10,10,.45) 55%,rgba(10,10,10,.1) 100%)}}
+
+/* ---- cabecera ---- */
+header{transition:opacity .4s;position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:18px 28px}
+header img{height:68px;width:auto}
+header a.tel{font-family:'Tit',serif;font-weight:700;font-size:20px;color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.55);padding:8px 16px;border-radius:3px}
+header a.tel:hover{border-color:var(--oro2);color:var(--oro2)}
+
+/* ---- las paradas del recorrido ---- */
+main{position:relative;z-index:2}
+.parada{min-height:100vh;display:flex;align-items:center;padding:0 28px}
+.parada .caja{max-width:560px;opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.parada.on .caja{opacity:1;transform:none}
+.parada h1{font-size:clamp(36px,5.4vw,66px);text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.parada h2{font-size:clamp(30px,4.6vw,54px);text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.parada p{font-size:clamp(17px,1.6vw,21px);margin:18px 0 0;max-width:34em;color:#f1ede3;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.parada .hilo{width:54px;height:4px;background:var(--oro);margin:0 0 22px}
+.sigue{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:5;font-size:13px;color:#ddd;letter-spacing:.3px;opacity:.85;transition:opacity .4s}
+.sigue span{display:block;width:1px;height:34px;background:#fff;margin:8px auto 0;animation:baja 1.6s ease-in-out infinite}
+@keyframes baja{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.sigue.off{opacity:0}
+
+/* ---- final: contacto ---- */
+.final{position:relative;z-index:2;background:var(--crema);color:var(--ink);padding:80px 28px 60px}
+.final .in{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.final h2{font-size:clamp(36px,5vw,58px)}
+.final p{font-size:18px;color:#3d4147;max-width:32em}
+.final .hilo{width:54px;height:4px;background:var(--oro);margin:0 0 20px}
+.botones{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:18px;padding:16px 18px;border-radius:4px;border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn.wa{background:#25D366;border-color:#25D366;color:#fff}
+.btn.oro{background:var(--ink);border-color:var(--ink);color:#fff}
+.datos{margin-top:28px;font-size:15px;color:#5c6168;line-height:1.7}
+.datos b{color:var(--ink)}
+.pie{max-width:960px;margin:56px auto 0;padding-top:18px;border-top:1px solid #ddd6c4;font-size:13px;color:#7a7f86;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:760px){.final .in{grid-template-columns:1fr;gap:28px}header img{height:44px}header a.tel{font-size:17px;padding:7px 12px}.parada{padding:0 20px;align-items:flex-end;padding-bottom:110px}}
+@media(prefers-reduced-motion:reduce){.parada .caja{transition:none}.sigue span{animation:none}}
+</style>
+</head>
+<body>
+
+<div class="fondo" aria-hidden="true">
+  <video id="vA" muted playsinline loop preload="auto"></video>
+  <video id="vB" muted playsinline loop preload="auto"></video>
+  <div class="velo"></div>
+</div>
+
+<header>
+  <img src="img/logo.png" alt="Vorma Construct SL">
+  <a class="tel" href="tel:+34642892873">642 89 28 73</a>
+</header>
+
+<main>
+  <section class="parada" data-clip="0">
+    <div class="caja">
+      <div class="hilo"></div>
+      <h1>Tú nos dejas las llaves, nosotros te devolvemos un hogar.</h1>
+      <p>Reformas de pisos, baños y cocinas en Bilbao y Bizkaia. Entra y mira cómo queda.</p>
+    </div>
+  </section>
+
+  <section class="parada" data-clip="1">
+    <div class="caja">
+      <div class="hilo"></div>
+      <h2>Baños que se terminan, y se terminan bien.</h2>
+      <p>Microcemento, ducha de obra, mueble a medida y las instalaciones nuevas. Fontanería y electricidad las hacemos nosotros, sin intermediarios.</p>
+    </div>
+  </section>
+
+  <section class="parada" data-clip="2">
+    <div class="caja">
+      <div class="hilo"></div>
+      <h2>Cocinas con presupuesto cerrado, partida por partida.</h2>
+      <p>Sabes lo que cuesta cada cosa antes de empezar. Si algo cambia por el camino, se valora por escrito y lo apruebas tú.</p>
+    </div>
+  </section>
+
+  <section class="parada" data-clip="3">
+    <div class="caja">
+      <div class="hilo"></div>
+      <h2>Y mientras dura la obra, la ves desde el móvil.</h2>
+      <p>Al aceptar el presupuesto recibes un enlace privado con las fases y las fotos de cada día. Te mantenemos informado en todo momento, y para cualquier duda nos tienes al teléfono.</p>
+    </div>
+  </section>
+</main>
+
+<div class="sigue" id="sigue">Sigue bajando<span></span></div>
+
+<section class="final" id="contacto">
+  <div class="in">
+    <div>
+      <div class="hilo"></div>
+      <h2>Cuéntanos qué quieres reformar.</h2>
+      <p>Vamos a verlo, lo medimos y te damos el presupuesto cerrado. Sin compromiso y sin sorpresas. La calidad no tiene por qué ser cara.</p>
+      <div class="datos">
+        <b>Vorma Construct SL</b><br>
+        Vornicu Ioan Marian · Santutxu, Bilbao<br>
+        <a href="tel:+34642892873">642 89 28 73</a> · <a href="mailto:Vornicu.i.marian@gmail.com">Vornicu.i.marian@gmail.com</a>
+      </div>
+    </div>
+    <div class="botones">
+      <a class="btn wa" href="https://wa.me/34642892873?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma">Escribir por WhatsApp</a>
+      <a class="btn oro" href="tel:+34642892873">Llamar ahora</a>
+      <a class="btn" href="mailto:Vornicu.i.marian@gmail.com?subject=Presupuesto%20de%20reforma">Mandar un correo</a>
+    </div>
+  </div>
+  <div class="pie">
+    <span>© Vorma Construct SL · Bilbao</span>
+    <span>Reformas integrales · Baños · Cocinas · Instalaciones</span>
+  </div>
+</section>
+
+<script>
+/* Los cuatro tramos del recorrido */
+var CLIPS=[
+ "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181349_a89d64b2-2a69-42c2-8cf3-80ed49879856.mp4",
+ "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181240_14687615-177a-4b7e-b23f-13965d91dfda.mp4",
+ "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181239_9077108b-a6fb-4636-9c0d-09adc1d954cd.mp4",
+ "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181239_9ee5ca7a-c0e2-4e44-9dda-7686587a205b.mp4"
+];
+var vids=[document.getElementById('vA'),document.getElementById('vB')],activo=0,clipActual=-1;
+function ponerClip(i){
+  if(i===clipActual)return;clipActual=i;
+  var sig=1-activo,v=vids[sig],ant=vids[activo];
+  v.src=CLIPS[i];v.currentTime=0;
+  var p=v.play();if(p&&p.catch)p.catch(function(){});
+  v.classList.add('on');ant.classList.remove('on');
+  setTimeout(function(){try{ant.pause()}catch(_){}} ,1200);
+  activo=sig;
+}
+var paradas=[].slice.call(document.querySelectorAll('.parada'));
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting&&e.intersectionRatio>=.5){
+      paradas.forEach(function(p){p.classList.toggle('on',p===e.target)});
+      ponerClip(+e.target.dataset.clip);
+    }
+  });
+},{threshold:[.5]});
+paradas.forEach(function(p){io.observe(p)});
+ponerClip(0);paradas[0].classList.add('on');
+/* la flecha de "sigue bajando" desaparece al llegar al contacto */
+var fin=document.getElementById('contacto'),sigue=document.getElementById('sigue');
+new IntersectionObserver(function(es){es.forEach(function(e){sigue.classList.toggle('off',e.isIntersecting);document.querySelector('header').style.opacity=e.isIntersecting?'0':'1';document.querySelector('header').style.pointerEvents=e.isIntersecting?'none':'auto'})},{threshold:.15}).observe(fin);
+/* en móvil, el primer toque arranca el vídeo si el navegador lo bloqueó */
+document.addEventListener('touchstart',function(){var v=vids[activo];if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}},{once:true,passive:true});
+</script>
+</body>
+</html>
