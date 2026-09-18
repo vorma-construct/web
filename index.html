@@ -37,8 +37,7 @@ a{color:inherit}
 /* ---- cabecera ---- */
 header{transition:opacity .4s;position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:14px 28px}
 header img{height:110px;width:auto}
-header a.tel{font-family:'Tit',serif;font-weight:700;font-size:20px;color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.55);padding:8px 16px;border-radius:3px}
-header a.tel:hover{border-color:var(--oro2);color:var(--oro2)}
+header a.tel{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;padding:8px 14px 8px 10px;border-radius:6px;background:rgba(0,0,0,.35);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14)}header a.tel svg{width:34px;height:34px;fill:var(--oro2);flex:none;background:rgba(168,123,24,.18);border-radius:50%;padding:7px}header .tel-txt{display:flex;flex-direction:column;line-height:1.1}header .tel-txt small{font-size:11.5px;color:#d9d3c5;letter-spacing:.2px}header .tel-txt b{font-family:'Tit',serif;font-weight:800;font-size:22px;color:#fff;margin-top:2px}header a.tel:hover .tel-txt b{color:var(--oro2)}
 
 /* ---- las paradas del recorrido ---- */
 main{position:relative;z-index:2}
@@ -67,7 +66,7 @@ main{position:relative;z-index:2}
 .datos{margin-top:28px;font-size:15px;color:#5c6168;line-height:1.7}
 .datos b{color:var(--ink)}
 .pie{max-width:960px;margin:56px auto 0;padding-top:18px;border-top:1px solid #ddd6c4;font-size:13px;color:#7a7f86;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-@media(max-width:760px){.final .in{grid-template-columns:1fr;gap:28px}header img{height:84px}header a.tel{font-size:17px;padding:7px 12px}.parada{padding:0 20px;align-items:flex-end;padding-bottom:110px}}
+@media(max-width:760px){.final .in{grid-template-columns:1fr;gap:28px}header img{height:84px}header a.tel{padding:6px 10px 6px 8px}header .tel-txt small{display:none}header .tel-txt b{font-size:18px}header a.tel svg{width:30px;height:30px;padding:6px}.parada{padding:0 20px;align-items:flex-end;padding-bottom:110px}}
 @media(prefers-reduced-motion:reduce){.parada .caja{transition:none}.sigue span{animation:none}}
 
 .texto{position:relative;z-index:2;background:var(--ink);color:#f1ede3;padding:72px 28px}
@@ -107,7 +106,10 @@ main{position:relative;z-index:2}
 
 <header>
   <img src="img/logo.png" alt="Vorma Construct SL">
-  <a class="tel" href="tel:+34642892873">642 89 28 73</a>
+  <a class="tel" href="tel:+34642892873">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+  <span class="tel-txt"><small>Llámanos, sin compromiso</small><b>642 89 28 73</b></span>
+</a>
 </header>
 
 <main>
