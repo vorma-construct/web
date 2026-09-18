@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vorma-construct.github.io/web/sitemap.xml
