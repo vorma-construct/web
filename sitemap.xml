@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://vorma-construct.github.io/web/aviso-legal.html</loc><priority>0.3</priority></url>
   <url><loc>https://vorma-construct.github.io/web/contacto.html</loc><priority>0.8</priority></url>
   <url><loc>https://vorma-construct.github.io/web/fontaneria-calefaccion-bilbao.html</loc><priority>0.8</priority></url>
   <url><loc>https://vorma-construct.github.io/web/</loc><priority>1.0</priority></url>
   <url><loc>https://vorma-construct.github.io/web/instalacion-electrica-piso-bilbao.html</loc><priority>0.8</priority></url>
   <url><loc>https://vorma-construct.github.io/web/pladur-tabiques-techos-bilbao.html</loc><priority>0.8</priority></url>
+  <url><loc>https://vorma-construct.github.io/web/politica-cookies.html</loc><priority>0.3</priority></url>
+  <url><loc>https://vorma-construct.github.io/web/politica-privacidad.html</loc><priority>0.3</priority></url>
   <url><loc>https://vorma-construct.github.io/web/precios-reformas-bilbao.html</loc><priority>0.8</priority></url>
   <url><loc>https://vorma-construct.github.io/web/reforma-bano-bilbao.html</loc><priority>0.8</priority></url>
   <url><loc>https://vorma-construct.github.io/web/reforma-cocina-bilbao.html</loc><priority>0.8</priority></url>

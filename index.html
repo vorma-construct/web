@@ -123,6 +123,11 @@ header{gap:18px}
 .unico__tres p{margin:0;color:#4a5058;line-height:1.55}
 .unico__cta{margin:34px 0 0}
 @media(max-width:760px){.unico__tres{grid-template-columns:1fr}.unico{padding:44px 18px}}
+
+.aviso-cookies{position:fixed;left:14px;right:14px;bottom:14px;z-index:60;background:#181b1f;color:#f1ede3;border:1px solid #33373c;border-radius:10px;padding:14px 16px;display:flex;gap:14px;align-items:center;max-width:720px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:14px}
+.aviso-cookies[hidden]{display:none}.aviso-cookies p{margin:0;flex:1}.aviso-cookies a{color:var(--oro2)}
+.aviso-cookies button{background:var(--oro);color:#fff;border:0;border-radius:6px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap}
+@media(max-width:900px){.aviso-cookies{flex-direction:column;align-items:stretch;bottom:80px}}
 </style>
 </head>
 <body>
@@ -302,6 +307,9 @@ header{gap:18px}
       <a href="precios-reformas-bilbao.html">Cuánto cuesta cada cosa</a>
       <a href="seguimiento-de-obra.html">Sigue tu obra desde el móvil</a>
       <a href="contacto.html">Pedir presupuesto</a>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="politica-privacidad.html">Privacidad</a>
+      <a href="politica-cookies.html">Cookies</a>
     </div>
     <div class="col">
       <h3>Dónde trabajamos</h3>
@@ -376,5 +384,12 @@ new IntersectionObserver(function(es){es.forEach(function(e){sigue.classList.tog
 /* en móvil, el primer toque arranca el vídeo si el navegador lo bloqueó */
 document.addEventListener('touchstart',function(){var v=vids[activo];if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}},{once:true,passive:true});
 </script>
+
+<div id="avisoCookies" class="aviso-cookies" role="dialog" aria-live="polite" hidden>
+  <p>Esta web <b>no usa cookies de publicidad ni de seguimiento</b>. Solo recordamos que has visto este aviso. <a href="politica-cookies.html">Más información</a></p>
+  <button type="button" onclick="cerrarAvisoCookies()">Entendido</button>
+</div>
+<script>(function(){try{if(!localStorage.getItem('vc_aviso'))document.getElementById('avisoCookies').hidden=false}catch(e){document.getElementById('avisoCookies').hidden=false}})();
+function cerrarAvisoCookies(){try{localStorage.setItem('vc_aviso','1')}catch(e){}document.getElementById('avisoCookies').hidden=true}</script>
 </body>
 </html>

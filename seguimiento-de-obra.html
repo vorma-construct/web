@@ -3,67 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Sigue tu reforma desde el móvil · Vorma Construct · Reformas en Bilbao</title>
-<meta name="description" content="Con Vorma Construct sigues tu reforma en Bilbao desde el móvil: fases, fotos de cada día, imprevistos con precio que apruebas tú y contrato firmado sin papeles. Míralo en cuarenta y cinco segundos.">
+<title>Sigue tu reforma desde el móvil · Vorma Construct Bilbao</title>
+<meta name="description" content="Con Vorma Construct sigues tu reforma desde el móvil: fases, fotos de cada día y contrato firmado sin papeles. Reformas en Bilbao con presupuesto cerrado.">
 <link rel="canonical" href="https://vorma-construct.github.io/web/seguimiento-de-obra.html">
-<meta property="og:title" content="Sigue tu reforma desde el móvil · Vorma Construct">
-<meta property="og:description" content="Fases, fotos de cada día y lo imprevisto con precio. Reformas en Bilbao que sigues desde el móvil.">
+<meta property="og:title" content="Sigue tu reforma desde el móvil · Vorma Construct Bilbao">
+<meta property="og:description" content="Con Vorma Construct sigues tu reforma desde el móvil: fases, fotos de cada día y contrato firmado sin papeles. Reformas en Bilbao con presupuesto cerrado.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vorma-construct.github.io/web/seguimiento-de-obra.html">
 <meta property="og:image" content="https://vorma-construct.github.io/web/img/og.jpg">
 <link rel="icon" href="img/simbolo.svg">
-<link rel="stylesheet" href="estilo.css?v=1789828734">
-<style>
-/* ---- esta pagina va como la portada: video fijo detras de todo ---- */
-html,body{background:#06080a;color:#fff}
-.fondo{position:fixed;inset:0;z-index:0;background:#06080a}
-.fondo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
-.fondo video.on{opacity:1}
-.fondo::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,8,10,.35) 0%,rgba(6,8,10,0) 25%,rgba(6,8,10,0) 60%,rgba(6,8,10,.55) 100%)}
-.cab{position:sticky;background:rgba(6,8,10,.55);backdrop-filter:blur(8px)}
-main{position:relative;z-index:1}
-.parada{min-height:100vh;display:flex;align-items:flex-end;padding:0 22px 12vh}
-.parada .caja{max-width:640px;background:linear-gradient(to right,rgba(6,8,10,.72),rgba(6,8,10,.45) 70%,rgba(6,8,10,0));padding:26px 28px 26px 0;border-radius:6px}
-.parada h1,.parada h2{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.75);font-size:clamp(30px,4.4vw,50px);line-height:1.05;margin:0 0 14px}
-.parada p{color:#f1ede3;font-size:18px;line-height:1.55;text-shadow:0 1px 10px rgba(0,0,0,.8);margin:0;max-width:34em}
-.parada .hilo{background:var(--oro2)}
-.parada.corta{min-height:80vh}
-/* la demo, superpuesta sobre el video */
-.demo{background:transparent;border:0;padding:8vh 22px 14vh}
-.demo .in{max-width:1000px;margin:0 auto}
-.demo h2{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.75)}
-.demo .entradilla{color:#f1ede3;text-shadow:0 1px 10px rgba(0,0,0,.8)}
-.demo__caja{background:rgba(6,8,10,.42);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px}
-.demo__pasos li{color:#b9b2a4}.demo__pasos li.on{color:#fff}
-.demo .nota{color:#cfc8ba}
-.movil__marco{box-shadow:0 30px 70px rgba(0,0,0,.6)}
-/* cierre */
-.cta{background:transparent;border:0;padding:10vh 22px 16vh}
-.cta h2{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.75)}
-.cta p{color:#f1ede3;text-shadow:0 1px 10px rgba(0,0,0,.8)}
-.pie{position:relative;z-index:1}
-@media(max-width:760px){
- .parada{padding:0 18px 10vh}
- .parada .caja{padding:20px 18px 20px 0}
- .demo__caja{padding:18px 14px}
-}
-@media(prefers-reduced-motion:reduce){.fondo video{display:none}}
-
-.movil__pantalla, .movil__pantalla *{color:#1c1f22;text-shadow:none}
-.movil__pantalla .wa__cab, .movil__pantalla .wa__cab *{color:#fff}
-.movil__pantalla .wa__link{color:#0b6bcb}
-.movil__pantalla .wa__hora{color:#8a8f94}
-.movil__pantalla .app__cab small,.movil__pantalla .barra__txt,.movil__pantalla .pie-foto{color:#6b7178}
-.movil__pantalla .fases li{color:#5c6168}.movil__pantalla .fases li.ok,.movil__pantalla .fases li.ahora{color:#1c1f22}
-.movil__pantalla .fases li span{color:#6b7178}.movil__pantalla .fases li.ok span,.movil__pantalla .fases li.ahora span{color:#fff}
-.movil__pantalla .fases li em{color:#8a8f94}
-.movil__pantalla .aviso__tag{color:#fff}.movil__pantalla .aviso__botones .si{color:#fff}.movil__pantalla .aviso__botones .no{color:#5c6168}
-</style>
+<link rel="stylesheet" href="estilo.css?v=1789831452">
 </head>
 <body>
-<div class="fondo" aria-hidden="true">
-  <video id="vA" muted playsinline loop preload="auto"></video>
-  <video id="vB" muted playsinline loop preload="auto"></video>
-</div>
-
 <header class="cab">
   <a class="marca" href="index.html"><img src="img/logo.svg" alt="Vorma Construct SL"></a>
   <nav class="menu">
@@ -74,136 +25,46 @@ main{position:relative;z-index:1}
     <a href="zonas.html">Zonas</a>
     <a href="contacto.html">Contacto</a>
   </nav>
-  <a class="tel" href="tel:+34642892873"><span><small>Llámanos, sin compromiso</small><b>642 89 28 73</b></span></a>
+  <a class="tel" href="tel:+34642892873">
+    <span><small>Llámanos, sin compromiso</small><b>642 89 28 73</b></span>
+  </a>
 </header>
 
 <main>
-  <section class="parada" data-clip="0">
-    <div class="caja">
-      <div class="hilo"></div>
-      <h1>Tu reforma en Bilbao, desde el móvil, todos los días.</h1>
-      <p>Lo que más agobia de una reforma no es el polvo: es no saber en qué va. Por eso, cuando aceptas el presupuesto te damos un enlace privado con tu obra dentro. Tranquilidad, control y todo por escrito.</p>
-    </div>
-  </section>
-
-  <section class="parada corta" data-clip="1">
-    <div class="caja">
-      <div class="hilo"></div>
-      <h2>Las fases, en orden. Y una foto cada día.</h2>
-      <p>Demoliciones, instalaciones, alicatado, pintura y entrega. Ves cuáles están terminadas y en cuál estamos hoy, con la foto del trabajo del día. Estés donde estés.</p>
-    </div>
-  </section>
-
-  <section class="parada corta" data-clip="0">
-    <div class="caja">
-      <div class="hilo"></div>
-      <h2>Lo imprevisto, con su precio, lo apruebas tú.</h2>
-      <p>Si al picar sale una tubería en mal estado, te llega con su foto, su explicación y lo que cuesta. No se toca nada hasta que tú dices adelante. Ni una sorpresa en la factura.</p>
-    </div>
-  </section>
-
-  <section class="parada corta" data-clip="1">
-    <div class="caja">
-      <div class="hilo"></div>
-      <h2>Presupuesto y contrato, sin papeles.</h2>
-      <p>El presupuesto va partida por partida con su precio. El contrato lo firmas desde el móvil: plazo, forma de pago y garantía de veinticuatro meses en la mano de obra.</p>
-    </div>
-  </section>
-
-<section class="demo" id="demo">
+<section class="franja portada-int">
+  <video class="fondo-video" autoplay muted loop playsinline preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181349_a89d64b2-2a69-42c2-8cf3-80ed49879856.mp4"></video>
+  <div class="velo"></div>
   <div class="in">
     <div class="hilo"></div>
-    <h2>Míralo como lo ve el cliente</h2>
-    <p class="entradilla">Dale al play. Esto es exactamente lo que le llega a quien nos contrata, contado por él mismo.</p>
-
-    <div class="demo__caja">
-      <div class="movil" aria-hidden="true">
-        <div class="movil__marco">
-          <div class="movil__barra"><span>9:41</span><span class="movil__iconos">▯▮ ▮▮▮</span></div>
-          <div class="movil__pantalla" id="pantalla">
-
-            <!-- 1. el mensaje de WhatsApp -->
-            <div class="esc esc--wa" data-esc="1">
-              <div class="wa__cab"><span class="wa__av">V</span><div><b>Vorma Construct</b><small>en línea</small></div></div>
-              <div class="wa__msg">
-                Hola, buenos días. Ya está firmado el presupuesto. Aquí tienes el enlace de tu obra para que la vayas viendo 👇
-                <span class="wa__link">vormaconstruct.es/obra/tu-piso</span>
-                <span class="wa__hora">10:12 ✓✓</span>
-              </div>
-            </div>
-
-            <!-- 2. las fases -->
-            <div class="esc esc--fases" data-esc="2">
-              <div class="app__cab"><b>Tu obra</b><small>Reforma piso · Iturribide 10</small></div>
-              <div class="barra"><i style="width:60%"></i></div>
-              <div class="barra__txt">60 % de la obra hecha</div>
-              <ul class="fases">
-                <li class="ok"><span>✓</span> Demoliciones <em>3 sep</em></li>
-                <li class="ok"><span>✓</span> Instalaciones <em>9 sep</em></li>
-                <li class="ahora"><span>3</span> Alicatado del baño <em>hoy</em></li>
-                <li><span>4</span> Pintura <em>pendiente</em></li>
-                <li><span>5</span> Entrega <em>pendiente</em></li>
-              </ul>
-            </div>
-
-            <!-- 3. la foto del día -->
-            <div class="esc esc--foto" data-esc="3">
-              <div class="app__cab"><b>Hoy en tu obra</b><small>Alicatado del baño</small></div>
-              <span class="foto"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091011_fdb7dab3-cd4e-4b91-aa90-f07afdc65270.png" alt="Foto de la obra del día" loading="lazy"></span>
-              <p class="pie-foto">Vamos por la mitad del baño. Mañana rejuntamos.</p>
-            </div>
-
-            <!-- 4. el imprevisto -->
-            <div class="esc esc--aviso" data-esc="4">
-              <div class="aviso__tag">Algo no previsto</div>
-              <div class="app__cab"><b>Tubería en mal estado</b><small>Detectado al picar la pared del baño</small></div>
-              <span class="foto"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091011_f7c9ed56-61a3-485a-a01b-38ccbe37cd26.png" alt="Imprevisto en la obra" loading="lazy"></span>
-              <p class="pie-foto">Está picada y conviene cambiarla ahora que está abierto.</p>
-              <div class="aviso__precio"><span>Sustituir el tramo</span><b>180 €</b></div>
-              <div class="aviso__botones"><span class="no">Ahora no</span><span class="si">Adelante</span></div>
-            </div>
-
-            <!-- 5. terminado -->
-            <div class="esc esc--fin" data-esc="5">
-              <div class="app__cab"><b>Obra terminada</b><small>Reforma piso · Iturribide 10</small></div>
-              <span class="foto"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091012_140d91c0-6f1c-4a2a-9518-1d90041b6321.png" alt="Baño terminado" loading="lazy"></span>
-              <p class="pie-foto">Todas las fases completadas. Garantía de veinticuatro meses.</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="demo__lado">
-        <audio id="audioDemo" src="demo-vorma.mp3" preload="auto"></audio>
-        <button class="btn-demo" id="btnDemo" type="button">
-          <span class="ico" id="icoDemo">▶</span> <span id="txtDemo">Ver la demostración</span>
-        </button>
-        <p class="demo__sub" id="subDemo">Con voz. Dura cuarenta y cinco segundos.</p>
-        <ol class="demo__pasos">
-          <li data-paso="1">Te llega el enlace por WhatsApp</li>
-          <li data-paso="2">Ves en qué fase está tu obra</li>
-          <li data-paso="3">Una foto nueva cada día</li>
-          <li data-paso="4">Lo imprevisto, con precio, lo apruebas tú</li>
-          <li data-paso="5">Obra terminada y garantía</li>
-        </ol>
-        <p class="nota">No hace falta instalar nada. El enlace es privado: solo lo tienes tú.</p>
-      </div>
+    <h1>Tu obra, desde el móvil, todos los días</h1>
+    <p class="entradilla">Lo que más agobia de una reforma no es el polvo: es no saber en qué va. Por eso, cuando aceptas el presupuesto te damos un enlace privado con tu obra dentro.</p>
+    <div class="cols">
+      <article><h3>Las fases, en orden</h3><p>Demoliciones, instalaciones, alicatado, pintura y entrega. Vas viendo cuáles están terminadas y en cuál estamos hoy.</p></article>
+      <article><h3>Fotos de cada día</h3><p>Subimos fotos según avanzamos. Si estás fuera, o el piso es para alquilar, lo sigues igual desde donde estés.</p></article>
+      <article><h3>Lo que aparece por el camino</h3><p>Si al picar sale una tubería en mal estado, lo verás ahí con su foto, su explicación y su precio, antes de que lo toquemos.</p></article>
+      <article><h3>Sin dejar de ser personas</h3><p>El enlace no sustituye al teléfono. Te mantenemos informado en todo momento y, para cualquier duda, nos tienes al teléfono siempre que quieras.</p></article>
     </div>
   </div>
 </section>
 
+<section class="franja oscura">
+  <div class="in">
+    <div class="hilo"></div>
+    <h2>Y todo lo que firmas, por escrito</h2>
+    <p class="entradilla">Con el presupuesto va el contrato de obra: precio, forma de pago, plazo, materiales, qué pasa si aparece algo no previsto y la garantía de veinticuatro meses en la mano de obra. Lo firmas desde el móvil, sin imprimir nada.</p>
+  </div>
+</section>
 
-  <section class="cta">
-    <div class="in">
-      <h2>¿Lo vemos en tu casa?</h2>
-      <p>Vamos, lo medimos y te damos el presupuesto cerrado partida por partida. Sin compromiso y sin coste.</p>
-      <div class="botones">
-        <a class="btn wa" href="https://wa.me/34642892873?text=Hola%2C%20quiero%20pedir%20presupuesto" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-        <a class="btn" href="tel:+34642892873">Llamar al 642 89 28 73</a>
-      </div>
+<section class="cta">
+  <div class="in">
+    <h2>¿Lo vemos en tu casa?</h2>
+    <p>Vamos, lo medimos y te damos el presupuesto cerrado partida por partida. Sin compromiso y sin coste.</p>
+    <div class="botones">
+      <a class="btn wa" href="https://wa.me/34642892873?text=Hola%2C%20quiero%20pedir%20presupuesto" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn" href="tel:+34642892873">Llamar al 642 89 28 73</a>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer class="pie">
@@ -233,52 +94,17 @@ main{position:relative;z-index:1}
       </ul>
     </div>
   </div>
-  <div class="legal">© Vorma Construct SL · Bilbao · <a href="precios-reformas-bilbao.html">Precios orientativos</a> · <a href="contacto.html">Pedir presupuesto</a></div>
+  <div class="legal">© Vorma Construct SL · Bilbao · <a href="aviso-legal.html">Aviso legal</a> · <a href="politica-privacidad.html">Privacidad</a> · <a href="politica-cookies.html">Cookies</a> · <a href="contacto.html">Pedir presupuesto</a></div>
 </footer>
+
 <a class="wa" href="https://wa.me/34642892873?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma" target="_blank" rel="noopener" aria-label="WhatsApp">
 <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.5 6 1.5 7 0 12.7-5.6 12.7-12.5S23 3 16 3zm0 22.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.2 10.2 0 0 1-1.6-5.4C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.4S21.8 25.8 16 25.8zm5.8-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
 <span>WhatsApp</span></a>
-
-<script>
-(function(){
-  var CLIPS=["https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_144238_370dc0cf-95f8-4854-87e3-993addec167a.mp4","https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_144237_0a825851-3898-4bd1-bddb-648cf1708704.mp4"];
-  var a=document.getElementById('vA'),b=document.getElementById('vB');
-  var vs=[a,b],act=0,i=-1;
-  function pon(n){ if(n===i)return; i=n; var s=1-act,v=vs[s],ant=vs[act];
-    if(v.src!==CLIPS[n]) v.src=CLIPS[n];
-    try{v.currentTime=0}catch(e){}
-    var p=v.play(); if(p&&p.catch)p.catch(function(){});
-    v.classList.add('on'); ant.classList.remove('on');
-    setTimeout(function(){try{ant.pause()}catch(e){}},1300); act=s; }
-  pon(0);
-  var paradas=[].slice.call(document.querySelectorAll('.parada[data-clip]'));
-  function mira(){ var mejor=null,d=1e9; paradas.forEach(function(p){var r=p.getBoundingClientRect();var c=Math.abs(r.top+r.height/2-window.innerHeight/2);if(c<d){d=c;mejor=p}});
-    if(mejor) pon(parseInt(mejor.getAttribute('data-clip'),10)||0); }
-  window.addEventListener('scroll',mira,{passive:true}); mira();
-  document.addEventListener('touchstart',function(){var v=vs[act];if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}},{once:true,passive:true});
-})();
-</script>
-<script>(function(){
-  var TIEMPOS=[0,7.59,17.35,25.71,36.57];
-  var escenas=[].slice.call(document.querySelectorAll('.esc'));
-  var pasos=[].slice.call(document.querySelectorAll('.demo__pasos li'));
-  var btn=document.getElementById('btnDemo'), ico=document.getElementById('icoDemo'), txt=document.getElementById('txtDemo');
-  var barra=document.querySelector('.barra i');
-  var audio=document.getElementById('audioDemo');
-  if(!escenas.length||!btn||!audio)return;
-  var actual=-1, activo=false;
-  function mostrar(n){ if(n===actual)return; actual=n;
-    escenas.forEach(function(e,k){e.classList.toggle('on',k===n)});
-    pasos.forEach(function(p,k){p.classList.toggle('on',k===n)});
-    if(n===1&&barra){barra.style.width='0';setTimeout(function(){barra.style.width='60%'},60)} }
-  function escenaPara(t){var n=0;for(var k=0;k<TIEMPOS.length;k++){if(t>=TIEMPOS[k]-0.05)n=k}return n}
-  function parar(){activo=false;try{audio.pause();audio.currentTime=0}catch(e){}ico.textContent='▶';txt.textContent='Ver la demostración';mostrar(0)}
-  audio.addEventListener('timeupdate',function(){ if(activo) mostrar(escenaPara(audio.currentTime)) });
-  audio.addEventListener('ended',function(){ activo=false; ico.textContent='▶'; txt.textContent='Ver la demostración'; });
-  btn.addEventListener('click',function(){ if(activo){parar();return}
-    activo=true; ico.textContent='■'; txt.textContent='Parar'; mostrar(0);
-    try{audio.currentTime=0;var pr=audio.play();if(pr&&pr.catch)pr.catch(function(){})}catch(e){} });
-  mostrar(0);
-})();</script>
+<div id="avisoCookies" class="aviso-cookies" role="dialog" aria-live="polite" hidden>
+  <p>Esta web <b>no usa cookies de publicidad ni de seguimiento</b>. Solo recordamos que has visto este aviso. <a href="politica-cookies.html">Más información</a></p>
+  <button type="button" onclick="cerrarAvisoCookies()">Entendido</button>
+</div>
+<script>(function(){try{if(!localStorage.getItem('vc_aviso'))document.getElementById('avisoCookies').hidden=false}catch(e){document.getElementById('avisoCookies').hidden=false}})();
+function cerrarAvisoCookies(){try{localStorage.setItem('vc_aviso','1')}catch(e){}document.getElementById('avisoCookies').hidden=true}</script>
 </body>
 </html>
