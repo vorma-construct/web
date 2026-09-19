@@ -85,3 +85,58 @@ h3{font-size:21px;margin:0 0 6px}
  .wa span{display:none}
 }
 .tabla tr th[colspan]{background:#2b2f34}
+
+/* ---- demostración del seguimiento ---- */
+.demo__caja{display:grid;grid-template-columns:320px 1fr;gap:44px;align-items:start;margin-top:30px}
+.movil__marco{width:320px;height:640px;background:#111;border-radius:38px;padding:12px 10px;box-shadow:0 20px 50px rgba(0,0,0,.35);position:relative}
+.movil__barra{display:flex;justify-content:space-between;color:#9aa0a6;font-size:11px;padding:2px 12px 6px}
+.movil__pantalla{position:relative;height:590px;background:#f4f1ea;border-radius:26px;overflow:hidden}
+.esc{position:absolute;inset:0;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s;padding:16px;overflow:hidden}
+.esc.on{opacity:1;transform:none}
+.esc img{width:100%;height:190px;object-fit:cover;border-radius:10px;margin-top:10px;background:#ddd}
+/* WhatsApp */
+.esc--wa{background:#e9e2d7}
+.wa__cab{display:flex;align-items:center;gap:10px;background:#075E54;color:#fff;margin:-16px -16px 14px;padding:14px 16px}
+.wa__av{width:34px;height:34px;border-radius:50%;background:#C99A2E;color:#1c1f22;display:grid;place-items:center;font-weight:800}
+.wa__cab small{display:block;font-size:11px;opacity:.8}
+.wa__msg{background:#fff;border-radius:10px 10px 10px 2px;padding:12px 14px;font-size:14.5px;line-height:1.45;max-width:90%;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.wa__link{display:block;margin-top:8px;color:#0b6bcb;text-decoration:underline;word-break:break-all;font-size:13.5px}
+.wa__hora{display:block;text-align:right;font-size:10.5px;color:#8a8f94;margin-top:6px}
+/* app */
+.app__cab b{font-family:'Tit',serif;font-size:21px;display:block}
+.app__cab small{color:#6b7178;font-size:12.5px}
+.barra{height:8px;background:#e2dccf;border-radius:99px;margin:16px 0 6px;overflow:hidden}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,#C99A2E,#A87B18);width:0;transition:width 1.4s ease}
+.barra__txt{font-size:12.5px;color:#6b7178;margin-bottom:12px}
+.fases{list-style:none;padding:0;margin:0;font-size:14.5px}
+.fases li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #e6e0d3;color:#5c6168}
+.fases li em{margin-left:auto;font-style:normal;font-size:12px;color:#8a8f94}
+.fases li span{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;background:#e2dccf;color:#6b7178;flex:none}
+.fases li.ok{color:#1c1f22}
+.fases li.ok span{background:#1a7a3f;color:#fff}
+.fases li.ahora{color:#1c1f22;font-weight:700}
+.fases li.ahora span{background:#A87B18;color:#fff}
+.pie-foto{font-size:13.5px;color:#5c6168;margin:10px 0 0}
+/* aviso */
+.esc--aviso{background:#fff7ec}
+.aviso__tag{display:inline-block;background:#D7481D;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;margin-bottom:10px}
+.aviso__precio{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding:10px 12px;background:#fff;border:1px solid #e6e0d3;border-radius:8px;font-size:14px}
+.aviso__precio b{font-family:'Tit',serif;font-size:19px}
+.aviso__botones{display:flex;gap:8px;margin-top:10px}
+.aviso__botones span{flex:1;text-align:center;padding:11px;border-radius:8px;font-size:14px;font-weight:700}
+.aviso__botones .no{background:#fff;border:1px solid #d5cfc2;color:#5c6168}
+.aviso__botones .si{background:#1a7a3f;color:#fff}
+/* lado */
+.btn-demo{display:inline-flex;align-items:center;gap:10px;background:var(--oro);color:#fff;border:0;border-radius:99px;padding:15px 26px;font-size:18px;font-weight:700;font-family:'Tit',serif;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.btn-demo:hover{background:var(--oro2)}
+.btn-demo .ico{font-size:15px}
+.demo__sub{font-size:13.5px;color:var(--gris);margin:10px 0 22px}
+.demo__pasos{margin:0;padding-left:20px;font-size:16px;line-height:1.5}
+.demo__pasos li{padding:7px 0;color:#7a8089;transition:color .3s}
+.demo__pasos li.on{color:var(--ink);font-weight:700}
+@media(max-width:860px){
+ .demo__caja{grid-template-columns:1fr;gap:26px;justify-items:center}
+ .demo__lado{width:100%}
+ .movil__marco{width:300px;height:600px}
+ .movil__pantalla{height:552px}
+}

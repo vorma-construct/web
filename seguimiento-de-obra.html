@@ -45,6 +45,89 @@
   </div>
 </section>
 
+<!-- DEMO: móvil que reproduce lo que ve el cliente, con voz en español -->
+<section class="franja demo" id="demo">
+  <div class="in">
+    <div class="hilo"></div>
+    <h2>Míralo como lo ve el cliente</h2>
+    <p class="entradilla">Dale al play. Esto es exactamente lo que le llega a quien nos contrata, contado por él mismo.</p>
+
+    <div class="demo__caja">
+      <div class="movil" aria-hidden="true">
+        <div class="movil__marco">
+          <div class="movil__barra"><span>9:41</span><span class="movil__iconos">▯▮ ▮▮▮</span></div>
+          <div class="movil__pantalla" id="pantalla">
+
+            <!-- 1. el mensaje de WhatsApp -->
+            <div class="esc esc--wa" data-esc="1">
+              <div class="wa__cab"><span class="wa__av">V</span><div><b>Vorma Construct</b><small>en línea</small></div></div>
+              <div class="wa__msg">
+                Hola Izan, ya está firmado el presupuesto. Aquí tienes el enlace de tu obra para que la vayas viendo 👇
+                <span class="wa__link">vormaconstruct.es/obra/izan</span>
+                <span class="wa__hora">10:12 ✓✓</span>
+              </div>
+            </div>
+
+            <!-- 2. las fases -->
+            <div class="esc esc--fases" data-esc="2">
+              <div class="app__cab"><b>Tu obra</b><small>Reforma piso · Iturribide 10</small></div>
+              <div class="barra"><i style="width:60%"></i></div>
+              <div class="barra__txt">60 % de la obra hecha</div>
+              <ul class="fases">
+                <li class="ok"><span>✓</span> Demoliciones <em>3 sep</em></li>
+                <li class="ok"><span>✓</span> Instalaciones <em>9 sep</em></li>
+                <li class="ahora"><span>3</span> Alicatado del baño <em>hoy</em></li>
+                <li><span>4</span> Pintura <em>pendiente</em></li>
+                <li><span>5</span> Entrega <em>pendiente</em></li>
+              </ul>
+            </div>
+
+            <!-- 3. la foto del día -->
+            <div class="esc esc--foto" data-esc="3">
+              <div class="app__cab"><b>Hoy en tu obra</b><small>Alicatado del baño</small></div>
+              <img src="https://image.pollinations.ai/prompt/photorealistic%20photo%20of%20a%20bathroom%20being%20tiled%2C%20large%20grey%20porcelain%20tiles%20half%20done%2C%20tile%20spacers%2C%20spirit%20level%2C%20daylight%2C%20no%20people?width=800&height=600&nologo=true" alt="Foto de la obra del día" loading="lazy">
+              <p class="pie-foto">Vamos por la mitad del baño. Mañana rejuntamos.</p>
+            </div>
+
+            <!-- 4. el imprevisto -->
+            <div class="esc esc--aviso" data-esc="4">
+              <div class="aviso__tag">Algo no previsto</div>
+              <div class="app__cab"><b>Tubería en mal estado</b><small>Detectado al picar la pared del baño</small></div>
+              <img src="https://image.pollinations.ai/prompt/photorealistic%20close%20up%20of%20an%20old%20corroded%20water%20pipe%20inside%20an%20opened%20bathroom%20wall%2C%20renovation%2C%20daylight?width=800&height=600&nologo=true" alt="Imprevisto en la obra" loading="lazy">
+              <p class="pie-foto">Está picada y conviene cambiarla ahora que está abierto.</p>
+              <div class="aviso__precio"><span>Sustituir el tramo</span><b>180 €</b></div>
+              <div class="aviso__botones"><span class="no">Ahora no</span><span class="si">Adelante</span></div>
+            </div>
+
+            <!-- 5. terminado -->
+            <div class="esc esc--fin" data-esc="5">
+              <div class="app__cab"><b>Obra terminada</b><small>Reforma piso · Iturribide 10</small></div>
+              <img src="https://image.pollinations.ai/prompt/photorealistic%20photo%20of%20a%20finished%20modern%20bathroom%2C%20walk-in%20shower%20with%20glass%20screen%2C%20oak%20vanity%2C%20round%20backlit%20mirror%2C%20white%20towels%2C%20warm%20daylight%2C%20no%20people?width=800&height=600&nologo=true" alt="Baño terminado" loading="lazy">
+              <p class="pie-foto">Todas las fases completadas. Garantía de veinticuatro meses.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="demo__lado">
+        <button class="btn-demo" id="btnDemo" type="button">
+          <span class="ico" id="icoDemo">▶</span> <span id="txtDemo">Ver la demostración</span>
+        </button>
+        <p class="demo__sub" id="subDemo">Con voz. Dura menos de un minuto.</p>
+        <ol class="demo__pasos">
+          <li data-paso="1">Te llega el enlace por WhatsApp</li>
+          <li data-paso="2">Ves en qué fase está tu obra</li>
+          <li data-paso="3">Una foto nueva cada día</li>
+          <li data-paso="4">Lo imprevisto, con precio, lo apruebas tú</li>
+          <li data-paso="5">Obra terminada y garantía</li>
+        </ol>
+        <p class="nota">No hace falta instalar nada. El enlace es privado: solo lo tienes tú.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="franja oscura">
   <div class="in">
     <div class="hilo"></div>
@@ -98,5 +181,48 @@
 <a class="wa" href="https://wa.me/34642892873?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma" target="_blank" rel="noopener" aria-label="WhatsApp">
 <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.5 6 1.5 7 0 12.7-5.6 12.7-12.5S23 3 16 3zm0 22.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.2 10.2 0 0 1-1.6-5.4C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.4S21.8 25.8 16 25.8zm5.8-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
 <span>WhatsApp</span></a>
-</body>
+<script>(function(){
+  var VOCES=[
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_085443_c1bc5626-2027-4496-b631-c1ed843ddeb9.wav",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_085444_8623f368-b50d-4224-b6eb-8329f75e9bdb.wav",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_085444_f07e43a4-94ea-4225-a180-71a5dd325553.wav",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_085444_290ad29f-78ff-4cc9-ab1f-27f975862c1b.wav",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_085444_68f46ed0-1cc6-4d25-a1be-b6f2bdab7b55.wav"
+  ];
+  var escenas=[].slice.call(document.querySelectorAll('.esc'));
+  var pasos=[].slice.call(document.querySelectorAll('.demo__pasos li'));
+  var btn=document.getElementById('btnDemo'), ico=document.getElementById('icoDemo'), txt=document.getElementById('txtDemo');
+  var barra=document.querySelector('.barra i');
+  if(!escenas.length||!btn)return;
+  var audios=VOCES.map(function(u){var a=new Audio();a.preload='auto';a.src=u;return a});
+  var i=0, activo=false, sig=null;
+
+  function mostrar(n){
+    escenas.forEach(function(e,k){e.classList.toggle('on',k===n)});
+    pasos.forEach(function(p,k){p.classList.toggle('on',k===n)});
+    if(n===1&&barra){barra.style.width='0';setTimeout(function(){barra.style.width='60%'},60)}
+  }
+  function parar(){
+    activo=false; audios.forEach(function(a){try{a.pause();a.currentTime=0}catch(e){}});
+    clearTimeout(sig); ico.textContent='▶'; txt.textContent='Ver la demostración';
+  }
+  function reproducir(n){
+    if(!activo)return;
+    if(n>=escenas.length){parar();mostrar(0);return}
+    i=n; mostrar(n);
+    var a=audios[n];
+    a.currentTime=0;
+    var p=a.play();
+    if(p&&p.catch)p.catch(function(){ sig=setTimeout(function(){reproducir(n+1)},5200) });
+    a.onended=function(){ sig=setTimeout(function(){reproducir(n+1)},700) };
+    sig=setTimeout(function(){ if(activo&&a.paused)reproducir(n+1) },12000);
+  }
+  btn.addEventListener('click',function(){
+    if(activo){parar();return}
+    activo=true; ico.textContent='■'; txt.textContent='Parar';
+    reproducir(0);
+  });
+  mostrar(0);
+})();
+</script></body>
 </html>
