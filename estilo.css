@@ -85,6 +85,16 @@ h3{font-size:21px;margin:0 0 6px;color:var(--oro2)}
 .obra figcaption span{color:#cfc8ba;font-size:15px;line-height:1.5}
 .equipo-foto{margin-top:30px;aspect-ratio:16/7;background:var(--panel);border:1px dashed var(--linea);border-radius:8px;display:grid;place-items:center;color:var(--gris)}
 @media(max-width:760px){.galeria{grid-template-columns:1fr}}
+.pasos{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:18px}
+.pasos li{display:flex;gap:16px;background:var(--panel);border:1px solid var(--linea);border-radius:8px;padding:18px 20px}
+.pasos .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--oro);color:#fff;font-family:'Tit',serif;font-weight:800;display:grid;place-items:center;font-size:18px}
+.pasos h3{margin:2px 0 4px}.pasos p{margin:0;color:#cfc8ba}
+.faqs{margin-top:26px;display:grid;gap:10px}
+.faq{background:var(--panel);border:1px solid var(--linea);border-radius:8px;padding:0 18px}
+.faq summary{cursor:pointer;font-family:'Tit',serif;font-size:19px;padding:16px 0;color:#fff;list-style:none;position:relative;padding-right:30px}
+.faq summary::after{content:"+";position:absolute;right:0;top:12px;color:var(--oro2);font-size:26px}
+.faq[open] summary::after{content:"–"}
+.faq p{margin:0 0 16px;color:#cfc8ba;max-width:44em}
 .legal h2{font-size:22px;margin:26px 0 8px}
 .legal p{color:#cfc8ba;max-width:44em}
 .legal a{color:var(--oro2)}
