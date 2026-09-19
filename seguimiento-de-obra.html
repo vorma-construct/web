@@ -31,7 +31,9 @@
 </header>
 
 <main>
-<section class="franja">
+<section class="franja portada-int">
+  <video class="fondo-video" autoplay muted loop playsinline preload="metadata" src="https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181349_a89d64b2-2a69-42c2-8cf3-80ed49879856.mp4"></video>
+  <div class="velo"></div>
   <div class="in">
     <div class="hilo"></div>
     <h1>Tu obra, desde el móvil, todos los días</h1>
@@ -62,8 +64,8 @@
             <div class="esc esc--wa" data-esc="1">
               <div class="wa__cab"><span class="wa__av">V</span><div><b>Vorma Construct</b><small>en línea</small></div></div>
               <div class="wa__msg">
-                Hola, buenos días. Ya está firmado el presupuesto. Aquí tienes el enlace de tu obra para que la vayas viendo 👇
-                <span class="wa__link">vormaconstruct.es/obra/tu-piso</span>
+                Hola Izan, ya está firmado el presupuesto. Aquí tienes el enlace de tu obra para que la vayas viendo 👇
+                <span class="wa__link">vormaconstruct.es/obra/izan</span>
                 <span class="wa__hora">10:12 ✓✓</span>
               </div>
             </div>
@@ -191,21 +193,17 @@
   var audio=document.getElementById('audioDemo');
   if(!escenas.length||!btn||!audio)return;
   var actual=-1, activo=false;
-  function mostrar(n){
-    if(n===actual)return; actual=n;
+  function mostrar(n){ if(n===actual)return; actual=n;
     escenas.forEach(function(e,k){e.classList.toggle('on',k===n)});
     pasos.forEach(function(p,k){p.classList.toggle('on',k===n)});
-    if(n===1&&barra){barra.style.width='0';setTimeout(function(){barra.style.width='60%'},60)}
-  }
+    if(n===1&&barra){barra.style.width='0';setTimeout(function(){barra.style.width='60%'},60)} }
   function escenaPara(t){var n=0;for(var k=0;k<TIEMPOS.length;k++){if(t>=TIEMPOS[k]-0.05)n=k}return n}
   function parar(){activo=false;try{audio.pause();audio.currentTime=0}catch(e){}ico.textContent='▶';txt.textContent='Ver la demostración';mostrar(0)}
   audio.addEventListener('timeupdate',function(){ if(activo) mostrar(escenaPara(audio.currentTime)) });
   audio.addEventListener('ended',function(){ activo=false; ico.textContent='▶'; txt.textContent='Ver la demostración'; });
-  btn.addEventListener('click',function(){
-    if(activo){parar();return}
+  btn.addEventListener('click',function(){ if(activo){parar();return}
     activo=true; ico.textContent='■'; txt.textContent='Parar'; mostrar(0);
-    try{audio.currentTime=0;var pr=audio.play();if(pr&&pr.catch)pr.catch(function(){})}catch(e){}
-  });
+    try{audio.currentTime=0;var pr=audio.play();if(pr&&pr.catch)pr.catch(function(){})}catch(e){} });
   mostrar(0);
 })();</script></body>
 </html>
