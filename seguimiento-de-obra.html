@@ -183,11 +183,11 @@
 <span>WhatsApp</span></a>
 <script>(function(){
   var VOCES=[
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_090103_a5c1e33a-6122-4119-9a35-470f1c4a7d2d.mp3",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091327_ffe922ec-cc77-408a-9174-e713cb0bcf65.mp3",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_090446_57a8944a-d51a-4ff0-87a4-c88325604628.mp3",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091239_d52e2ebb-12fb-4d06-aa98-1a1d9ab812f3.mp3",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091239_397437f5-f309-4f0b-8c4f-5431d798b42d.mp3"
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_095806_dfdd2eef-b641-44fc-9420-45b2f491e8bf.mp3",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_095806_50e16bd8-a1d6-4aae-8001-2cf63831f000.mp3",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_095806_04ef3c2e-e8bd-4f44-b060-35e73a977def.mp3",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_095806_1a8e8481-e459-43b5-9893-08f8cb92823e.mp3",
+   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_095806_11927ea9-35bf-4714-bb9e-2136b92a130a.mp3"
   ];
   var escenas=[].slice.call(document.querySelectorAll('.esc'));
   var pasos=[].slice.call(document.querySelectorAll('.demo__pasos li'));
@@ -203,7 +203,7 @@
     if(n===1&&barra){barra.style.width='0';setTimeout(function(){barra.style.width='60%'},60)}
   }
   function parar(){
-    activo=false; audios.forEach(function(a){try{a.pause();a.currentTime=0}catch(e){}});
+    activo=false; try{musica.pause();musica.currentTime=0}catch(e){} audios.forEach(function(a){try{a.pause();a.currentTime=0}catch(e){}});
     clearTimeout(sig); ico.textContent='▶'; txt.textContent='Ver la demostración';
   }
   function reproducir(n){
@@ -217,9 +217,11 @@
     a.onended=function(){ sig=setTimeout(function(){reproducir(n+1)},700) };
     sig=setTimeout(function(){ if(activo&&a.paused)reproducir(n+1) },12000);
   }
+  var musica=new Audio('musica-fondo.mp3'); musica.loop=true; musica.volume=0.14;
   btn.addEventListener('click',function(){
-    if(activo){parar();return}
+    if(activo){parar();try{musica.pause();musica.currentTime=0}catch(e){}return}
     activo=true; ico.textContent='■'; txt.textContent='Parar';
+    try{musica.currentTime=0;var pm=musica.play();if(pm&&pm.catch)pm.catch(function(){})}catch(e){}
     reproducir(0);
   });
   mostrar(0);
