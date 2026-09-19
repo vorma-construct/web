@@ -111,10 +111,11 @@
       </div>
 
       <div class="demo__lado">
+        <audio id="musicaFondo" src="musica-fondo.mp3" loop preload="auto"></audio>
         <button class="btn-demo" id="btnDemo" type="button">
           <span class="ico" id="icoDemo">▶</span> <span id="txtDemo">Ver la demostración</span>
         </button>
-        <p class="demo__sub" id="subDemo">Con voz. Dura menos de un minuto.</p>
+        <p class="demo__sub" id="subDemo">Con voz y música. Dura menos de un minuto. <button type="button" id="btnMus" style="background:none;border:0;color:#A87B18;font-weight:700;cursor:pointer;text-decoration:underline">quitar música</button></p>
         <ol class="demo__pasos">
           <li data-paso="1">Te llega el enlace por WhatsApp</li>
           <li data-paso="2">Ves en qué fase está tu obra</li>
@@ -217,12 +218,17 @@
     a.onended=function(){ sig=setTimeout(function(){reproducir(n+1)},700) };
     sig=setTimeout(function(){ if(activo&&a.paused)reproducir(n+1) },12000);
   }
-  var musica=new Audio('musica-fondo.mp3'); musica.loop=true; musica.volume=0.32;
+  var musica=document.getElementById('musicaFondo')||new Audio('musica-fondo.mp3');musica.loop=true; musica.volume=0.38; musica.preload='auto';try{musica.load()}catch(e){}
   btn.addEventListener('click',function(){
     if(activo){parar();try{musica.pause();musica.currentTime=0}catch(e){}return}
     activo=true; ico.textContent='■'; txt.textContent='Parar';
     try{musica.currentTime=0;var pm=musica.play();if(pm&&pm.catch)pm.catch(function(){})}catch(e){}
     reproducir(0);
+  });
+  var btnMus=document.getElementById('btnMus');
+  if(btnMus)btnMus.addEventListener('click',function(){
+    if(musica.volume>0){musica.volume=0;btnMus.textContent='poner música'}
+    else{musica.volume=0.38;btnMus.textContent='quitar música'}
   });
   mostrar(0);
 })();
