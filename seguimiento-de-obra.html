@@ -56,6 +56,17 @@ main{position:relative;z-index:1}
 .movil__pantalla .fases li span{color:#6b7178}.movil__pantalla .fases li.ok span,.movil__pantalla .fases li.ahora span{color:#fff}
 .movil__pantalla .fases li em{color:#8a8f94}
 .movil__pantalla .aviso__tag{color:#fff}.movil__pantalla .aviso__botones .si{color:#fff}.movil__pantalla .aviso__botones .no{color:#5c6168}
+
+.aviso__ok{display:none;margin-top:10px;background:#E8F5EC;border:1px solid #bfe3c9;border-radius:10px;padding:10px 12px;font-size:13px}
+.aviso__ok b{display:block;color:#1a7a3f;margin-bottom:2px}.aviso__ok span{color:#3a4148}
+.esc--aviso .foto{height:150px}.esc--aviso.ok .aviso__botones{opacity:.35}.esc--aviso.ok .pie-foto{display:none}.esc--aviso.ok .aviso__ok{display:block}
+.esc--aviso.ok .aviso__botones .si{outline:3px solid #7ED09A}
+.demo__pasos li{cursor:pointer}
+.demo__pasos li:hover{color:#fff}
+.demo__fin{display:none;margin-top:16px;background:rgba(6,8,10,.5);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px;text-align:center}
+.demo__fin.on{display:block}
+.demo__fin b{display:block;color:#fff;margin-bottom:10px;font-family:'Tit',serif;font-size:19px}
+.btn-demo-cta{display:inline-block;background:var(--oro);color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:40px}
 </style>
 </head>
 <body>
@@ -163,7 +174,8 @@ main{position:relative;z-index:1}
               <span class="foto"><img src="img/obra-tuberia.jpg" alt="Imprevisto en la obra" loading="lazy"></span>
               <p class="pie-foto">Está picada y conviene cambiarla ahora que está abierto.</p>
               <div class="aviso__precio"><span>Sustituir el tramo</span><b>180 €</b></div>
-              <div class="aviso__botones"><span class="no">Ahora no</span><span class="si">Adelante</span></div>
+              <div class="aviso__botones"><span class="no">Ahora no</span><span class="si" id="btnSiDemo">Adelante</span></div>
+              <div class="aviso__ok" id="avisoOk"><b>✓ Aprobado por ti</b><span>Sumado al presupuesto: +180 €, por escrito</span></div>
             </div>
 
             <!-- 5. terminado -->
@@ -182,7 +194,8 @@ main{position:relative;z-index:1}
         <button class="btn-demo" id="btnDemo" type="button">
           <span class="ico" id="icoDemo">▶</span> <span id="txtDemo">Ver la demostración</span>
         </button>
-        <p class="demo__sub" id="subDemo">Con voz. Dura cuarenta y cinco segundos.</p>
+        <p class="demo__sub" id="subDemo">Con voz. Dura cuarenta y cinco segundos. Toca un paso para ir a él.</p>
+        <div class="demo__fin" id="demoFin"><b>Así de claro lo tendrías tú.</b><a class="btn-demo-cta" href="https://wa.me/34642892873?text=Hola%2C%20he%20visto%20la%20demostraci%C3%B3n%20y%20quiero%20pedir%20visita%20y%20presupuesto" target="_blank" rel="noopener">Pide visita y presupuesto</a></div>
         <ol class="demo__pasos">
           <li data-paso="1">Te llega el enlace por WhatsApp</li>
           <li data-paso="2">Ves en qué fase está tu obra</li>
@@ -262,25 +275,30 @@ main{position:relative;z-index:1}
 })();
 </script>
 <script>(function(){
-  var TIEMPOS=[0,7.59,17.35,25.71,36.57];
+  var TIEMPOS=[0,7.59,17.35,25.71,36.57], T_OK=31.8;
   var escenas=[].slice.call(document.querySelectorAll('.esc'));
   var pasos=[].slice.call(document.querySelectorAll('.demo__pasos li'));
   var btn=document.getElementById('btnDemo'), ico=document.getElementById('icoDemo'), txt=document.getElementById('txtDemo');
-  var barra=document.querySelector('.barra i');
-  var audio=document.getElementById('audioDemo');
+  var barra=document.querySelector('.barra i'), audio=document.getElementById('audioDemo');
+  var fin=document.getElementById('demoFin'), escAviso=document.querySelector('.esc--aviso'), movil=document.querySelector('.movil__marco');
   if(!escenas.length||!btn||!audio)return;
-  var actual=-1, activo=false;
+  var actual=-1, activo=false, terminado=false;
   function mostrar(n){ if(n===actual)return; actual=n;
     escenas.forEach(function(e,k){e.classList.toggle('on',k===n)});
     pasos.forEach(function(p,k){p.classList.toggle('on',k===n)});
     if(n===1&&barra){barra.style.width='0';setTimeout(function(){barra.style.width='60%'},60)} }
   function escenaPara(t){var n=0;for(var k=0;k<TIEMPOS.length;k++){if(t>=TIEMPOS[k]-0.05)n=k}return n}
-  function parar(){activo=false;try{audio.pause();audio.currentTime=0}catch(e){}ico.textContent='▶';txt.textContent='Ver la demostración';mostrar(0)}
-  audio.addEventListener('timeupdate',function(){ if(activo) mostrar(escenaPara(audio.currentTime)) });
-  audio.addEventListener('ended',function(){ activo=false; ico.textContent='▶'; txt.textContent='Ver la demostración'; });
-  btn.addEventListener('click',function(){ if(activo){parar();return}
-    activo=true; ico.textContent='■'; txt.textContent='Parar'; mostrar(0);
-    try{audio.currentTime=0;var pr=audio.play();if(pr&&pr.catch)pr.catch(function(){})}catch(e){} });
+  function refrescar(){ var t=audio.currentTime; mostrar(escenaPara(t)); if(escAviso)escAviso.classList.toggle('ok',t>=T_OK); }
+  function botonPlay(){ico.textContent='▶';txt.textContent=terminado?'Verla otra vez':(audio.currentTime>0?'Seguir':'Ver la demostración')}
+  function botonPausa(){ico.textContent='❚❚';txt.textContent='Pausa'}
+  function encajar(){ try{ if(movil){var r=movil.getBoundingClientRect(); if(r.top<80||r.bottom>window.innerHeight) movil.scrollIntoView({behavior:'smooth',block:'center'})} }catch(e){} }
+  function reproducir(){ activo=true; terminado=false; fin.classList.remove('on'); botonPausa(); encajar();
+    var pr=audio.play(); if(pr&&pr.catch)pr.catch(function(){}); }
+  function pausar(){ activo=false; try{audio.pause()}catch(e){} botonPlay(); }
+  audio.addEventListener('timeupdate',function(){ if(activo) refrescar() });
+  audio.addEventListener('ended',function(){ activo=false; terminado=true; botonPlay(); fin.classList.add('on'); });
+  btn.addEventListener('click',function(){ if(activo){pausar();return} if(terminado){try{audio.currentTime=0}catch(e){} if(escAviso)escAviso.classList.remove('ok'); mostrar(0)} reproducir(); });
+  pasos.forEach(function(p,k){ p.addEventListener('click',function(){ try{audio.currentTime=TIEMPOS[k]}catch(e){} if(escAviso)escAviso.classList.toggle('ok',TIEMPOS[k]>=T_OK); mostrar(k); if(!activo)reproducir(); else encajar(); }); });
   mostrar(0);
 })();</script>
 
