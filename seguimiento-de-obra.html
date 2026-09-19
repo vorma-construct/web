@@ -111,11 +111,11 @@
       </div>
 
       <div class="demo__lado">
-        <audio id="musicaFondo" src="musica-fondo.mp3" loop preload="auto"></audio>
+        <audio id="audioDemo" src="demo-vorma.mp3" preload="auto"></audio>
         <button class="btn-demo" id="btnDemo" type="button">
           <span class="ico" id="icoDemo">▶</span> <span id="txtDemo">Ver la demostración</span>
         </button>
-        <p class="demo__sub" id="subDemo">Con voz y música. Dura menos de un minuto. <button type="button" id="btnMus" style="background:none;border:0;color:#A87B18;font-weight:700;cursor:pointer;text-decoration:underline">quitar música</button></p>
+        <p class="demo__sub" id="subDemo">Con voz. Dura cuarenta y cinco segundos.</p>
         <ol class="demo__pasos">
           <li data-paso="1">Te llega el enlace por WhatsApp</li>
           <li data-paso="2">Ves en qué fase está tu obra</li>
@@ -183,54 +183,29 @@
 <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.5 6 1.5 7 0 12.7-5.6 12.7-12.5S23 3 16 3zm0 22.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.2 10.2 0 0 1-1.6-5.4C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.4S21.8 25.8 16 25.8zm5.8-7.7c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
 <span>WhatsApp</span></a>
 <script>(function(){
-  var VOCES=[
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_100149_e089d037-3420-4e6e-b0bb-cebfe9c22347.wav",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_100149_4400a5e8-5936-4d90-a999-32c631cd10d5.wav",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_100149_0c16a3eb-1b16-49e0-96b7-cbfc0ae3805c.wav",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_100149_9b626bf5-6deb-47fe-a30b-ad619770248f.wav",
-   "https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_100149_adb740a3-2019-40e6-953a-dcd1f0535976.wav"
-  ];
+  var TIEMPOS=[0,7.59,17.35,25.71,36.57];
   var escenas=[].slice.call(document.querySelectorAll('.esc'));
   var pasos=[].slice.call(document.querySelectorAll('.demo__pasos li'));
   var btn=document.getElementById('btnDemo'), ico=document.getElementById('icoDemo'), txt=document.getElementById('txtDemo');
   var barra=document.querySelector('.barra i');
-  if(!escenas.length||!btn)return;
-  var audios=VOCES.map(function(u){var a=new Audio();a.preload='auto';a.src=u;return a});
-  var i=0, activo=false, sig=null;
-
+  var audio=document.getElementById('audioDemo');
+  if(!escenas.length||!btn||!audio)return;
+  var actual=-1, activo=false;
   function mostrar(n){
+    if(n===actual)return; actual=n;
     escenas.forEach(function(e,k){e.classList.toggle('on',k===n)});
     pasos.forEach(function(p,k){p.classList.toggle('on',k===n)});
     if(n===1&&barra){barra.style.width='0';setTimeout(function(){barra.style.width='60%'},60)}
   }
-  function parar(){
-    activo=false; try{musica.pause();musica.currentTime=0}catch(e){} audios.forEach(function(a){try{a.pause();a.currentTime=0}catch(e){}});
-    clearTimeout(sig); ico.textContent='▶'; txt.textContent='Ver la demostración';
-  }
-  function reproducir(n){
-    if(!activo)return;
-    if(n>=escenas.length){parar();mostrar(0);return}
-    i=n; mostrar(n);
-    var a=audios[n];
-    a.currentTime=0;
-    var p=a.play();
-    if(p&&p.catch)p.catch(function(){ sig=setTimeout(function(){reproducir(n+1)},5200) });
-    a.onended=function(){ sig=setTimeout(function(){reproducir(n+1)},700) };
-    sig=setTimeout(function(){ if(activo&&a.paused)reproducir(n+1) },12000);
-  }
-  var musica=document.getElementById('musicaFondo')||new Audio('musica-fondo.mp3');musica.loop=true; musica.volume=0.38; musica.preload='auto';try{musica.load()}catch(e){}
+  function escenaPara(t){var n=0;for(var k=0;k<TIEMPOS.length;k++){if(t>=TIEMPOS[k]-0.05)n=k}return n}
+  function parar(){activo=false;try{audio.pause();audio.currentTime=0}catch(e){}ico.textContent='▶';txt.textContent='Ver la demostración';mostrar(0)}
+  audio.addEventListener('timeupdate',function(){ if(activo) mostrar(escenaPara(audio.currentTime)) });
+  audio.addEventListener('ended',function(){ activo=false; ico.textContent='▶'; txt.textContent='Ver la demostración'; });
   btn.addEventListener('click',function(){
-    if(activo){parar();try{musica.pause();musica.currentTime=0}catch(e){}return}
-    activo=true; ico.textContent='■'; txt.textContent='Parar';
-    try{musica.currentTime=0;var pm=musica.play();if(pm&&pm.catch)pm.catch(function(){})}catch(e){}
-    reproducir(0);
-  });
-  var btnMus=document.getElementById('btnMus');
-  if(btnMus)btnMus.addEventListener('click',function(){
-    if(musica.volume>0){musica.volume=0;btnMus.textContent='poner música'}
-    else{musica.volume=0.38;btnMus.textContent='quitar música'}
+    if(activo){parar();return}
+    activo=true; ico.textContent='■'; txt.textContent='Parar'; mostrar(0);
+    try{audio.currentTime=0;var pr=audio.play();if(pr&&pr.catch)pr.catch(function(){})}catch(e){}
   });
   mostrar(0);
-})();
-</script></body>
+})();</script></body>
 </html>
