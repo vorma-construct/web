@@ -1,0 +1,17 @@
+video/portada-salon.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_165220_d6cafa19-2825-48ba-b8bb-d9824f643262.mp4
+video/portada-cocina.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_165611_e37ef0d6-8987-4ba1-befe-2aaffa46af39.mp4
+video/sofa.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_144238_370dc0cf-95f8-4854-87e3-993addec167a.mp4
+video/piso-terminado.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_144237_0a825851-3898-4bd1-bddb-648cf1708704.mp4
+video/pasillo.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181349_a89d64b2-2a69-42c2-8cf3-80ed49879856.mp4
+video/bano.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181240_14687615-177a-4b7e-b23f-13965d91dfda.mp4
+video/cocina.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181239_9077108b-a6fb-4636-9c0d-09adc1d954cd.mp4
+video/salon.mp4|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260918_181239_9ee5ca7a-c0e2-4e44-9dda-7686587a205b.mp4
+img/galeria-salon.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_163544_b0eae8bd-b407-4af5-bb48-f074caf69c39.png
+img/galeria-cocina-verde.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_163544_48648541-abbf-4edb-959b-f591a810c679.png
+img/galeria-bano.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_163544_d22fa1b9-7139-4c92-86d2-6449629b5d9d.png
+img/galeria-dormitorio.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_163544_05e96503-9bfb-4a1f-9444-db1077369932.png
+img/galeria-cocina-isla.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_163544_d271b47a-85f1-4b64-91c5-b4b942d412c3.png
+img/galeria-bano-terrazo.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_163544_d5a01347-77bc-450d-9075-36f40f5d4a20.png
+img/obra-alicatado.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091011_fdb7dab3-cd4e-4b91-aa90-f07afdc65270.png
+img/obra-tuberia.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091011_f7c9ed56-61a3-485a-a01b-38ccbe37cd26.png
+img/obra-bano-terminado.png|https://d8j0ntlcm91z4.cloudfront.net/user_3JVkNd1GnfKqGxO6OaFHjhkWtp2/hf_20260919_091012_140d91c0-6f1c-4a2a-9518-1d90041b6321.png

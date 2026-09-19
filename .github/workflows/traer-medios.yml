@@ -1,0 +1,26 @@
+name: Traer videos e imagenes a la web
+on:
+  workflow_dispatch:
+  push:
+    paths: [ "medios.txt" ]
+jobs:
+  traer:
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar lo que falte
+        run: |
+          mkdir -p video img
+          while IFS='|' read -r destino url; do
+            [ -z "$destino" ] && continue
+            if [ ! -f "$destino" ]; then
+              echo "bajando $destino"; curl -sSL -o "$destino" "$url"
+            fi
+          done < medios.txt
+          ls -la video img | head -40
+      - name: Guardar
+        run: |
+          git config user.name "medios" && git config user.email "medios@users.noreply.github.com"
+          git add video img && git commit -m "Videos e imagenes alojados en la web" || echo "sin cambios"
+          git push
