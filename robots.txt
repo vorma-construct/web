@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://vorma-construct.github.io/web/sitemap.xml
+Sitemap: https://reformas-en-bilbao.es/sitemap.xml
