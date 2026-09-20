@@ -11,7 +11,7 @@ a{color:inherit}
 img{max-width:100%}
 .cab{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:20px;justify-content:space-between;
  padding:10px 22px;background:rgba(15,17,19,.92);backdrop-filter:blur(8px);color:#fff}
-.cab .marca img{height:62px;display:block}
+.cab .marca img{height:62px;width:auto;display:block}
 .cab .menu{display:flex;gap:18px;font-size:15px}
 .cab .menu a{text-decoration:none;color:#f1ede3;white-space:nowrap}
 .cab .menu a:hover{color:var(--oro2)}
@@ -64,7 +64,7 @@ h3,.h3{font-size:21px;margin:0 0 6px;color:var(--oro2);font-family:'Tit',serif;f
 .pie ul.cols2{columns:2}
 .pie a{color:#cfc8ba;text-decoration:none}
 .pie a:hover{color:var(--oro2)}
-.pie__logo{height:70px;margin-bottom:12px}
+.pie__logo{height:70px;width:auto;margin-bottom:12px}
 .pie .datos{color:#9d968a;font-size:14px}
 .legal{max-width:1000px;margin:36px auto 0;padding-top:16px;border-top:1px solid #333;font-size:13px;color:#8a8479}
 .wa-flot{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:10px;background:#8A6512;color:#fff;
@@ -79,7 +79,7 @@ h3,.h3{font-size:21px;margin:0 0 6px;color:var(--oro2);font-family:'Tit',serif;f
 .aviso-cookies button{background:#8A6512;color:#fff;border:0;border-radius:6px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap}
 .galeria{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .obra{margin:0;background:var(--panel);border:1px solid var(--linea);border-radius:8px;overflow:hidden}
-.obra img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.obra img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block}
 .obra figcaption{padding:14px 16px}
 .obra figcaption b{display:block;font-family:'Tit',serif;font-size:19px;color:var(--oro2);margin-bottom:4px}
 .obra figcaption span{color:#cfc8ba;font-size:15px;line-height:1.5}

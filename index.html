@@ -16,7 +16,7 @@
 {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Vorma Construct SL","alternateName":"Vorma Construct","description":"Empresa de reformas en Bilbao: reformas integrales de pisos, baños y cocinas, instalaciones y construcción de vivienda en estructura ligera.","url":"https://vorma-construct.github.io/web/","telephone":"+34642892873","email":"Vornicu.i.marian@gmail.com","image":"https://vorma-construct.github.io/web/img/logo.png","priceRange":"€€","address":{"@type":"PostalAddress","streetAddress":"Calle Santutxu 80","addressLocality":"Bilbao","postalCode":"48004","addressRegion":"Bizkaia","addressCountry":"ES"},"areaServed":[{"@type":"City","name":"Bilbao"},{"@type":"AdministrativeArea","name":"Bizkaia"}],"openingHours":"Mo-Fr 08:00-19:00","sameAs":[]}
 </script>
 <link rel="icon" href="img/simbolo.svg">
-<link rel="preload" href="img/portada-poster.jpg" as="image" fetchpriority="high">
+<link rel="preload" as="image" href="img/portada-poster.webp" type="image/webp" fetchpriority="high">
 <link rel="preload" href="fonts/titulos-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/texto-regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -52,8 +52,8 @@ main{position:relative;z-index:2}
 .parada p{font-size:clamp(17px,1.6vw,21px);margin:18px 0 0;max-width:34em;color:#f1ede3;text-shadow:0 1px 12px rgba(0,0,0,.6)}
 .parada .hilo{width:54px;height:4px;background:var(--oro);margin:0 0 22px}
 .sigue{position:fixed;left:44%;bottom:22px;transform:translateX(-50%);z-index:5;font-size:13px;color:#ddd;letter-spacing:.3px;opacity:.85;transition:opacity .4s}
-.sigue span{display:block;width:1px;height:34px;background:#fff;margin:8px auto 0;animation:baja 1.6s ease-in-out infinite}
-@keyframes baja{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.sigue span{display:block;width:1px;height:34px;background:#fff;margin:8px auto 0;animation:baja 1.6s ease-in-out infinite;transform-origin:top;will-change:transform}
+@keyframes baja{0%{transform:translateY(0) scaleY(0)}50%{transform:translateY(0) scaleY(1)}100%{transform:translateY(34px) scaleY(0)}}
 .sigue.off{opacity:0}
 
 /* ---- final: contacto ---- */
@@ -140,14 +140,14 @@ header{gap:18px}
 <body>
 
 <div class="fondo" aria-hidden="true">
-  <img class="poster" src="img/portada-poster.jpg" alt="" fetchpriority="high" decoding="async">
-  <video id="vA" muted playsinline loop preload="metadata" poster="img/portada-poster.jpg"></video>
+  <img class="poster" src="img/portada-poster.webp" alt="" fetchpriority="high" decoding="async" width="1600" height="900">
+  <video id="vA" muted playsinline loop preload="metadata" poster="img/portada-poster.webp"></video>
   <video id="vB" muted playsinline loop preload="none"></video>
   <div class="velo"></div>
 </div>
 
 <header>
-  <img src="img/logo.svg" alt="Vorma Construct SL">
+  <img src="img/logo.svg" alt="Vorma Construct SL" width="1254" height="985">
   <nav class="menu-portada">
  <a href="precios-reformas-bilbao.html">Precios</a>
  <a href="reforma-integral-piso-bilbao.html">Reformas</a>
