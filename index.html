@@ -16,6 +16,9 @@
 {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Vorma Construct SL","alternateName":"Vorma Construct","description":"Empresa de reformas en Bilbao: reformas integrales de pisos, baños y cocinas, instalaciones y construcción de vivienda en estructura ligera.","url":"https://vorma-construct.github.io/web/","telephone":"+34642892873","email":"Vornicu.i.marian@gmail.com","image":"https://vorma-construct.github.io/web/img/logo.png","priceRange":"€€","address":{"@type":"PostalAddress","streetAddress":"Calle Santutxu 80","addressLocality":"Bilbao","postalCode":"48004","addressRegion":"Bizkaia","addressCountry":"ES"},"areaServed":[{"@type":"City","name":"Bilbao"},{"@type":"AdministrativeArea","name":"Bizkaia"}],"openingHours":"Mo-Fr 08:00-19:00","sameAs":[]}
 </script>
 <link rel="icon" href="img/simbolo.svg">
+<link rel="preload" href="img/portada-poster.jpg" as="image" fetchpriority="high">
+<link rel="preload" href="fonts/titulos-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/texto-regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:'Tit';src:url('fonts/titulos-bold.woff2') format('woff2');font-weight:700 900;font-display:swap}
 @font-face{font-family:'Tit';src:url('fonts/titulos-regular.woff2') format('woff2');font-weight:100 600;font-display:swap}
@@ -128,13 +131,15 @@ header{gap:18px}
 .aviso-cookies[hidden]{display:none}.aviso-cookies p{margin:0;flex:1}.aviso-cookies a{color:var(--oro2)}
 .aviso-cookies button{background:var(--oro);color:#fff;border:0;border-radius:6px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap}
 @media(max-width:900px){.aviso-cookies{flex-direction:column;align-items:stretch;bottom:80px}}
+.fondo .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 </style>
 </head>
 <body>
 
 <div class="fondo" aria-hidden="true">
-  <video id="vA" muted playsinline loop preload="auto"></video>
-  <video id="vB" muted playsinline loop preload="auto"></video>
+  <img class="poster" src="img/portada-poster.jpg" alt="" fetchpriority="high" decoding="async">
+  <video id="vA" muted playsinline loop preload="metadata" poster="img/portada-poster.jpg"></video>
+  <video id="vB" muted playsinline loop preload="none"></video>
   <div class="velo"></div>
 </div>
 
