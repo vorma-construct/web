@@ -1,0 +1,25 @@
+name: Avisar a los buscadores (IndexNow)
+on:
+  push:
+    branches: [ main ]
+    paths: [ "**.html", "sitemap.xml" ]
+  workflow_dispatch:
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Esperar a que Cloudflare publique
+        run: sleep 150
+      - name: Enviar todas las direcciones del mapa del sitio
+        run: |
+          python3 - <<'PY'
+          import re,json,urllib.request
+          urls=re.findall(r'<loc>(.*?)</loc>',open('sitemap.xml').read())
+          body=json.dumps({"host":"reformas-en-bilbao.es","key":"f1d8f35050865611beff7b546a3ff862","keyLocation":"https://reformas-en-bilbao.es/f1d8f35050865611beff7b546a3ff862.txt","urlList":urls}).encode()
+          r=urllib.request.Request("https://api.indexnow.org/indexnow",data=body,headers={"Content-Type":"application/json; charset=utf-8"})
+          try:
+              print(len(urls),"direcciones ->",urllib.request.urlopen(r).status)
+          except Exception as e:
+              print("respuesta:",e); raise
+          PY
