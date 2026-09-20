@@ -67,7 +67,7 @@ h3,.h3{font-size:21px;margin:0 0 6px;color:var(--oro2);font-family:'Tit',serif;f
 .pie__logo{height:70px;margin-bottom:12px}
 .pie .datos{color:#9d968a;font-size:14px}
 .legal{max-width:1000px;margin:36px auto 0;padding-top:16px;border-top:1px solid #333;font-size:13px;color:#8a8479}
-.wa-flot{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:10px;background:var(--oro);color:#fff;
+.wa-flot{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:10px;background:#8A6512;color:#fff;
  text-decoration:none;font-family:'Tit',serif;font-weight:700;font-size:17px;padding:12px 18px 12px 14px;border-radius:40px;
  box-shadow:0 6px 20px rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.35)}
 .wa-flot svg{width:26px;height:26px;fill:#fff}
