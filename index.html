@@ -117,7 +117,7 @@ header{gap:18px}
 .btn-demo-portada:hover{background:var(--oro2)}
 .unico{position:relative;z-index:2;background:var(--crema,#FBF8F1);color:var(--ink,#1c1f22);padding:64px 24px}
 .unico .in{max-width:1000px;margin:0 auto;text-align:center}
-.unico__k{font-family:'Tit',serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--oro);margin:0 0 10px}
+.unico__k{font-family:'Tit',serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#8A6512;margin:0 0 10px}
 .unico h2{font-family:'Tit',serif;font-size:clamp(28px,3.6vw,42px);margin:0 0 34px;line-height:1.05}
 .unico__tres{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:left}
 .unico__tres article{background:#fff;border:1px solid #e4ded1;border-radius:8px;padding:24px 22px;position:relative}
@@ -129,9 +129,12 @@ header{gap:18px}
 
 .aviso-cookies{position:fixed;left:14px;right:14px;bottom:14px;z-index:60;background:#181b1f;color:#f1ede3;border:1px solid #33373c;border-radius:10px;padding:14px 16px;display:flex;gap:14px;align-items:center;max-width:720px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:14px}
 .aviso-cookies[hidden]{display:none}.aviso-cookies p{margin:0;flex:1}.aviso-cookies a{color:var(--oro2)}
-.aviso-cookies button{background:var(--oro);color:#fff;border:0;border-radius:6px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap}
+.aviso-cookies button{background:#8A6512;color:#fff;border:0;border-radius:6px;padding:10px 16px;font-weight:700;cursor:pointer;white-space:nowrap}
 @media(max-width:900px){.aviso-cookies{flex-direction:column;align-items:stretch;bottom:80px}}
 .fondo .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.unico .btn-demo-portada{background:#8A6512}
+#contacto .btn.wa{background:#8A6512;border-color:#8A6512}
+#contacto .pie span{color:#5c6168}
 </style>
 </head>
 <body>
@@ -395,8 +398,8 @@ new IntersectionObserver(function(es){es.forEach(function(e){sigue.classList.tog
 document.addEventListener('touchstart',function(){var v=vids[activo];if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}},{once:true,passive:true});
 </script>
 
-<div id="avisoCookies" class="aviso-cookies" role="dialog" aria-live="polite" hidden>
-  <p>Esta web <b>no usa cookies de publicidad ni de seguimiento</b>. Solo recordamos que has visto este aviso. <a href="politica-cookies.html">Más información</a></p>
+<div id="avisoCookies" class="aviso-cookies" role="dialog" aria-label="Aviso de cookies" aria-live="polite" hidden>
+  <p>Esta web <b>no usa cookies de publicidad ni de seguimiento</b>. Solo recordamos que has visto este aviso. <a href="politica-cookies.html">Más información sobre las cookies</a></p>
   <button type="button" onclick="cerrarAvisoCookies()">Entendido</button>
 </div>
 <script>(function(){try{if(!localStorage.getItem('vc_aviso'))document.getElementById('avisoCookies').hidden=false}catch(e){document.getElementById('avisoCookies').hidden=false}})();
