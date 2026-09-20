@@ -8,3 +8,6 @@
   Cache-Control: public, max-age=604800
 /*.mp3
   Cache-Control: public, max-age=2592000
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
