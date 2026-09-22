@@ -98,8 +98,12 @@ h3,.h3{font-size:21px;margin:0 0 6px;color:var(--oro2);font-family:'Tit',serif;f
 .legal h2{font-size:22px;margin:26px 0 8px}
 .legal p{color:#cfc8ba;max-width:44em}
 .legal a{color:var(--oro2)}
+.lista-envio{margin:12px 0 14px;padding-left:20px;max-width:44em}
+.lista-envio li{margin:0 0 8px}
 @media(max-width:900px){
- .aviso-cookies{flex-direction:column;align-items:stretch;bottom:80px}
+ .aviso-cookies{flex-direction:row;align-items:center;gap:10px;padding:9px 12px;font-size:12.5px;line-height:1.35;left:10px;right:10px;bottom:80px}
+ .aviso-cookies button{padding:9px 12px}
+ .pie{padding-bottom:84px}
  .cab{flex-wrap:wrap;gap:10px;padding:10px 16px}
  .cab .menu{order:3;width:100%;overflow-x:auto;gap:14px;padding-bottom:4px}
  .cab .marca img{height:48px}
